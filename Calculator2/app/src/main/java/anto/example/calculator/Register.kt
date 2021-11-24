@@ -35,9 +35,8 @@ class Register : AppCompatActivity() {
                 password = binding.passReg?.text.toString()
 
                 BaseDatos.useradd(username,password)
-
                 val duration = Toast.LENGTH_SHORT
-                val s = "Username: ${userpass.keys} --- Password: ${userpass.values}"
+                val s = "Username: ${BaseDatos.userpass.keys} --- Password: ${BaseDatos.userpass.values}"
                 Toast.makeText(this,s,duration).show()
                 val intent2 = Intent(this, Test1::class.java)
                 startActivity(intent2)
