@@ -1,0 +1,21 @@
+object BaseDatos{
+
+    val userpass: MutableMap1<String, String> = mutableMapOf()
+
+    fun useradd(username: String, password: String){
+        userpass.put(username,password)
+    }
+
+    fun finduser(username: String,password: String): Boolean {
+        var flag: Boolean = false
+        for(i in userpass) {
+            if (userpass.containsKey(username)) {
+               if (userpass.getValue(username).equals(password)) {
+                   flag = true
+               }
+            }
+        }
+        return flag
+    }
+
+}
